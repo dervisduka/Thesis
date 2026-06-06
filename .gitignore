@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Artifacts
+outputs/models/*.pkl
+outputs/figures/*.png
+outputs/results/*.csv
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local datasets (keep folder, ignore files)
+data/*.csv
+
