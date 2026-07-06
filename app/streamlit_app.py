@@ -70,7 +70,6 @@ if figures_dir.exists():
         st.info("No figures yet. Run a pipeline to generate charts.")
     else:
         for img in image_paths:
-            st.image(str(img), caption=img.name, use_container_width=True)
+            st.image(str(img), caption=img.name, use_column_width=True)
 else:
     st.info("No figures directory yet. Run a pipeline first.")
-

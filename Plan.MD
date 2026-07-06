@@ -234,7 +234,6 @@ Logistic Regression
 Decision Tree
 Random Forest
 XGBoost
-Support Vector Machine
 ```
 
 Metrikat:
@@ -403,7 +402,7 @@ Create a function that checks missing values and class distribution for a binary
 ```
 
 ```text
-Create a function that trains Logistic Regression, Decision Tree, Random Forest, XGBoost and SVM models.
+Create a function that trains Logistic Regression, Decision Tree, Random Forest and XGBoost models.
 ```
 
 ```text

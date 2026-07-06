@@ -60,18 +60,19 @@ Architecture is a two-track training flow (`fraud` and `phishing`) converging in
 2. **Fraud target contract**: fraud data must include `Class` with binary 0/1 values.
 3. **Phishing target detection is dynamic**: target is auto-detected from `status|label|class|result` (case-insensitive), then normalized to 0/1 using token mapping in `src.data_loader`.
 4. **Class imbalance treatment is built in**: training uses class-weighted models plus SMOTE pipeline by default (`use_smote=True` in `run_dataset_pipeline`).
-5. **Best model selection rule is explicit**: sort by `Recall` descending, tie-break by `ROC-AUC`.
-6. **Metric and artifact naming is fixed**:
+5. **Default model set excludes SVM** for practical runtime: Logistic Regression, Decision Tree, Random Forest, XGBoost (when installed).
+6. **Best model selection rule is explicit**: sort by `Recall` descending, tie-break by `ROC-AUC`.
+7. **Metric and artifact naming is fixed**:
    - `outputs/results/fraud_results.csv`
    - `outputs/results/phishing_results.csv`
    - `outputs/results/final_model_comparison.csv`
    - `outputs/models/fraud_best_model.pkl`
    - `outputs/models/phishing_best_model.pkl`
-7. **Risk scoring bands are centralized in code** (`src.risk_scoring.classify_risk`):
+8. **Risk scoring bands are centralized in code** (`src.risk_scoring.classify_risk`):
    - `0.00-0.30` -> Low Risk / Allow
    - `0.31-0.70` -> Medium Risk / Require additional verification
    - `0.71-1.00` -> High Risk / Block or manual review
-8. **Streamlit depends on generated artifacts**: UI reads only saved CSV/PNG files from `outputs/`; missing files show warnings instead of crashing.
+9. **Streamlit depends on generated artifacts**: UI reads only saved CSV/PNG files from `outputs/`; missing files show warnings instead of crashing.
 
 # Copilot response style
 

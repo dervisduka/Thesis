@@ -44,6 +44,13 @@ python -m src.pipeline --dataset phishing --input data/phishing.csv
 python -m src.pipeline --dataset both --fraud-input data/creditcard.csv --phishing-input data/phishing.csv
 ```
 
+Faster run (less exhaustive):
+
+```bash
+python -m src.pipeline --dataset phishing --input data/dataset_phishing.csv --fast --no-smote
+python -m src.pipeline --dataset fraud --input data/creditcard.csv --fast --no-smote
+```
+
 Outputs are written to:
 
 - `outputs/results/`
